@@ -12,7 +12,7 @@ public class Kelp extends Plant {
 	}
 	
 	public void reproduce() {
-		RandomGenerator rgen = new RandomGenerator();
+		RandomGenerator rgen = RandomGenerator.getInstance();
 		//We can fiddle with the rate of reproduction-right now its a 50% chance
 		int reproduce=rgen.nextInt(1,2);
 		if(reproduce==1) {
