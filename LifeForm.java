@@ -47,6 +47,10 @@ public abstract class LifeForm {
 		return !alive;
 	}
 	
+	public void kill(){
+		alive=false;
+	}
+	
 	// getter and setters (aka accessors and mutators)
 	public int getMyLifeSpan() {
 		return myLifeSpan;
