@@ -28,10 +28,10 @@ public class Shark extends Fish{
 		if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= null ){
 		return false;	
 		}
-			else if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= Minnow){
+			else if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= ){
 				return true;
 			}
-			else if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= Ray){
+			else if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= ){
 				return true;
 			}
 			else{
