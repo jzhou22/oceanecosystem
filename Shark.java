@@ -21,7 +21,12 @@ public class Shark extends Fish{
 	
 	public void double getSpeed(){
 		return speed;	
+	}	
+		public boolean isNearPrey(Lifeform x){
+		
+		if(getElementAt(x.getMyLocation().getX(), x.getMyLocation().getY())= 
 	}
+		   
 	
 		
 }
