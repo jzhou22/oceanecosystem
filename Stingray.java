@@ -8,6 +8,7 @@ public class Stingray extends Fish{
 		super(l,w);
 		RandomGenerator rgen = RandomGenerator.getInstance();
 		myLifeSpan = 10;
+		myColor = Color.gray;
 		speed=rgen.nextInt(3,8);
 	}
 
