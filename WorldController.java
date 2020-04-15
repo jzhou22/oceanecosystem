@@ -22,7 +22,7 @@ public class WorldController extends GraphicsProgram {
 	}
 	
 	public void setUpWorld(){
-		theWorld = new World(150,150);
+		theWorld = new World(20,20);
 		theWorld.getCreatureList().add( new Kelp( new Location(30,60), theWorld ));
 		theWorld.getCreatureList().add( new Kelp( new Location(40,60), theWorld ));
 		theWorld.getCreatureList().add( new Clam(new Location(50,80), theWorld ));
