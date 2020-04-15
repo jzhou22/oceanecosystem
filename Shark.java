@@ -4,10 +4,10 @@ import acm.util.RandomGenerator;
 
 public class Shark extends Fish{
 	
-	public Shark(Location l, World w, double s) {
+	public Shark(Location l, World w) {
 		super(l,w);
 		myLifeSpan = 10;
-		double speed = s;
+		speed=rgen.nextInt(3,8);
 			 
 		 }
 		
