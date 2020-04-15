@@ -1,5 +1,7 @@
 package oceanecosystem;
 
+import java.awt.Color;
+
 import acm.util.RandomGenerator;
 
 public class Stingray extends Fish{
@@ -15,5 +17,9 @@ public class Stingray extends Fish{
 	public void reproduce() {
 		
 		
+	}
+	
+	public String getType() {
+		return "Stingray";
 	}
 }

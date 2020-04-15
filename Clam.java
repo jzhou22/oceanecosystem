@@ -22,4 +22,8 @@ public class Clam extends LifeForm{
 		RandomGenerator rgen = RandomGenerator.getInstance();
 		
 	}
+
+	public String getType() {
+		return "Clam";
+	}
 }

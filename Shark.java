@@ -1,6 +1,9 @@
 package oceanecosystem;
 
 import acm.util.RandomGenerator;
+
+import java.awt.Color;
+
 import acm.graphics.*;
 public class Shark extends Fish{
 	
@@ -30,16 +33,18 @@ public class Shark extends Fish{
 		if(getElementAt(myLocation.getX(), myLocation.getY())== null ){
 		return false;	
 		}
-			else if(getElementAt(myLocation.getX(), myLocation.getY())==null ){
-				return true;
-			}
-			else if(getElementAt(myLocation.getX(), myLocation.getY())==null ){
-				return true;
-			}
-			else{
-				return false;
-	}
-		   
-	
+		else if(getElementAt(myLocation.getX(), myLocation.getY())==null ){
+			return true;
+		}
+		else if(getElementAt(myLocation.getX(), myLocation.getY())==null ){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}	
+	
+	public String getType() {
+		return "Shark";
+	}
 }

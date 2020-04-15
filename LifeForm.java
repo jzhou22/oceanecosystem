@@ -43,6 +43,8 @@ public abstract class LifeForm {
 	// to be alive you have to be able to reproduce....
 	public abstract void reproduce();
 	
+	public abstract String getType();
+	
 	public boolean isDead(){
 		return !alive;
 	}

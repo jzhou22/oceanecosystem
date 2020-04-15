@@ -15,5 +15,9 @@ public class Grass extends Plant {
 		
 		myWorld.getCreatureList().add(new Grass(new Location(newX,newY), myWorld));
 	}
+	
+	public String getType() {
+		return "Grass";
+	}
 
 }

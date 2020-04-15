@@ -1,5 +1,6 @@
 package oceanecosystem;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import acm.util.RandomGenerator;
@@ -23,4 +24,7 @@ public class Kelp extends Plant {
 		}
 	}
 
+	public String getType() {
+		return "Kelp";
+	}
 }
