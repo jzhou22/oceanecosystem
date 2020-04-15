@@ -8,6 +8,7 @@ public class Minnow extends Fish{
 		super(l,w);
 		RandomGenerator rgen = RandomGenerator.getInstance();
 		myLifeSpan = 10;
+		myColor = Color.RED;
 		speed=rgen.nextInt(1,5);
 		
 	}
