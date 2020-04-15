@@ -89,10 +89,5 @@ public abstract class LifeForm {
 		return "LifeForm [myLifeSpan=" + myLifeSpan + ", myLocation="
 				+ myLocation + ", myColor=" + myColor + "]";
 	}
-	public boolean isNearPrey(Lifeform x){
-		if(x.getLocation()
-	}
-	public boolean isNearPredator(Lifeform x){
-		x.getLocation	
-	}
+	
 }
