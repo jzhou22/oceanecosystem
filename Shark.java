@@ -7,6 +7,7 @@ public class Shark extends Fish{
 	public Shark(Location l, World w) {
 		super(l,w);
 		myLifeSpan = 10;
+		myColor = Color.BLUE;
 		speed=rgen.nextInt(3,8);
 			 
 		 }
