@@ -1,5 +1,6 @@
 package oceanecosystem;
 
+
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public abstract class LifeForm {
 	
 	public boolean isDead(){
 		return !alive;
-	}
+	}	
 	
 	public void kill(){
 		alive=false;

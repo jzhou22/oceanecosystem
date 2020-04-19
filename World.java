@@ -1,5 +1,6 @@
 package oceanecosystem;
 
+
 import java.util.ArrayList;
 
 public class World {
@@ -22,9 +23,9 @@ public class World {
 	public void letTimePass(){
 		
 		makeNewCreatures();
-		//eatThings();
-		//creaturesGetOlder();
-		//purgeTheDead();		
+//		eatThings();
+		creaturesGetOlder();
+		purgeTheDead();		
 	}
 	
 	public void makeNewCreatures() {

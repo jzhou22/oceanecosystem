@@ -12,15 +12,18 @@ public class Shark extends Fish {
 	public Shark(Location l, World w) {
 		super(l, w);
 		RandomGenerator rgen = RandomGenerator.getInstance();
-		myLifeSpan = 10;
+		myLifeSpan = 100;
 		myColor = Color.BLUE;
 		speed = rgen.nextInt(3, 8);
 
 	}
 
 	public void reproduce() {
-		if (myAge == 4) {
-			
+		RandomGenerator loc = RandomGenerator.getInstance();
+		if (myAge == 1) {
+			int newX = (int)(myLocation.getX()+(loc.nextInt(-5,5)));
+			int newY = (int)(myLocation.getY()+(loc.nextInt(-5,5))); 
+			myWorld.getCreatureList().add(new Shark(new Location(newX,newY), myWorld));
 		}
 
 	}
@@ -37,14 +40,13 @@ public class Shark extends Fish {
 	public boolean isNearPrey() {
 
 		for (LifeForm prey : myWorld.getCreatureList()) {
-			if (getMyLocation()== prey.getMyLocation() && prey.getType() == "Stingray") {
+			if (getMyLocation() == prey.getMyLocation() && prey.getType() == "Stingray") {
 				return true;
-			} else if (getMyLocation()== prey.getMyLocation() && prey.getType() == "Minnow") {
+			} else if (getMyLocation() == prey.getMyLocation() && prey.getType() == "Minnow") {
 				return true;
 			}
 		}
 		return false;
-
 	}
 
 }
