@@ -1,5 +1,6 @@
 package oceanecosystem;
 
+
 import java.awt.Color;
 
 public abstract class Fish extends LifeForm{
@@ -7,5 +8,7 @@ public abstract class Fish extends LifeForm{
 	public Fish(Location loc, World w) {
 		super(loc, w);
 	}
+	
+	
 	
 }

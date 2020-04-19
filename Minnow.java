@@ -1,5 +1,6 @@
 package oceanecosystem;
 
+
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
@@ -16,9 +17,12 @@ public class Minnow extends Fish{
 	}
 
 	public void reproduce() {
+		if(myAge ==)
 		
 		
 	}
+	
+	
 	
 	public String getType() {
 		return "Minnow";

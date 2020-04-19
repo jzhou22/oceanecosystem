@@ -1,5 +1,8 @@
 package oceanecosystem;
 
+
+import java.awt.Color;
+
 import acm.util.RandomGenerator;
 
 public class Clam extends LifeForm{
@@ -7,6 +10,7 @@ public class Clam extends LifeForm{
 	public Clam(Location l, World w) {
 		super(l,w);
 		myLifeSpan = 10;
+		myColor = Color.CYAN;
 	}
 	
 	//eats kelp in a 5x5 radius
