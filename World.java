@@ -38,8 +38,8 @@ public class World {
 		int yPosition;
 		
 			for(int i=0; i< currentSizeOfCreatureList; i++) {
-				xPosition = creatureList.get(i).getX();
-				yPosition = creatureList.get(i).getY();
+				xPosition = creatureList.get(i).getMyLocation.getX();
+				yPosition = creatureList.get(i).getMyLocation.getY();
 				
 				//random generator for movement anywhere between certain bounds
 				xPosition + rgen.nextInt(-3,3);
