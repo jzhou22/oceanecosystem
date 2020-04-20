@@ -32,8 +32,8 @@ public class World {
 		move();
 	}
 	// general movement code that can be applied to every creature at once
-	public void move(){
-		int currentSizeOfCreatureList = creatureList().size();
+	public void moveGeneral(){
+		int currentSizeOfCreatureList = getCreatureList().size();
 		int xPosition;
 		int yPosition;
 		
@@ -42,8 +42,8 @@ public class World {
 				yPosition = creatureList.get(i).getMyLocation.getY();
 				
 				//random generator for movement anywhere between certain bounds
-				xPosition + rgen.nextInt(-3,3);
-				yPosition + rgen.nextInt(-3,3);
+				xPosition += rgen.nextInt(-3,3);
+				yPosition += rgen.nextInt(-3,3);
 				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
 				
 			}
