@@ -29,24 +29,16 @@ public class World {
 //		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();		
-		move();
+		moveCreatures();
 	}
 	// general movement code that can be applied to every creature at once
-	public void moveGeneral(){
-		int currentSizeOfCreatureList = getCreatureList().size();
-		int xPosition;
-		int yPosition;
-		
-			for(int i=0; i< currentSizeOfCreatureList; i++) {
-				xPosition = creatureList.get(i).getMyLocation.getX();
-				yPosition = creatureList.get(i).getMyLocation.getY();
-				
-				//random generator for movement anywhere between certain bounds
-				xPosition += rgen.nextInt(-3,3);
-				yPosition += rgen.nextInt(-3,3);
-				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
-				
+	public void moveCreatures(){
+		for(LifeForm i : creatureList) {
+			if(i.getType()=="Stingray" || i.getType()=="Shark" || i.getType()=="Minnow" ) {
+				((Fish) i).move(((Fish) i).hunt());
 			}
+		}
+			
 	}
 	
 	public void makeNewCreatures() {
