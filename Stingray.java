@@ -24,6 +24,10 @@ public class Stingray extends Fish{
 		speed=rgen.nextInt(s-3,s+3);
 	}
 	
+	public Location hunt() {
+			
+	}
+	
 	//eats fish or clams if it touches it
 		public void eat() {
 			int eat = rgen.nextInt(1, 2);
