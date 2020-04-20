@@ -26,6 +26,7 @@ public class World {
 //		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();		
+		move();
 	}
 	
 	public void makeNewCreatures() {
