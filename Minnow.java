@@ -22,6 +22,7 @@ public class Minnow extends Fish{
 		speed=rgen.nextInt(s-1,s+3);
 		
 	}
+	
 	//eats kelp if it touches it
 	public void eat() {
 		int eat = rgen.nextInt(1, 2);
