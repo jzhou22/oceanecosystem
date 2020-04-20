@@ -29,6 +29,20 @@ public class World {
 		move();
 	}
 	
+	public void move(){
+		int currentSizeOfCreatureList = myWorld.getCreatureList().size();
+		int xPosition;
+		int yPosition;
+			for(int i=0; i< currentSizeOfCreatureList; i++) {
+				xPosition = creatureList.get(i).getMyLocation.getX();
+				yPosition = creatureList.get(i).getMyLocation.getY();
+				xPosition++;
+				yPosition++;
+				creatureList.get(i).setX(xPosition);
+				creatureList.get(i).setY(yPosition);
+			}
+	}
+	
 	public void makeNewCreatures() {
 		
 		int currentSizeOfCreatureList = creatureList.size();
