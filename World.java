@@ -28,7 +28,7 @@ public class World {
 		purgeTheDead();		
 		move();
 	}
-	
+	// general movement code that can be applied to every creature at once
 	public void move(){
 		int currentSizeOfCreatureList = myWorld.getCreatureList().size();
 		int xPosition;
