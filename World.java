@@ -2,6 +2,7 @@ package oceanecosystem;
 
 
 import java.util.ArrayList;
+import acm.util.RandomGenerator;
 
 public class World {
 	/*
@@ -12,6 +13,7 @@ public class World {
 	private int width;
 	private int height;
 	private ArrayList<LifeForm> creatureList;
+	private RandomGenerator rgen = new RandomGenerator();
 	
 	public World(int width, int height) {
 		super();
@@ -36,11 +38,13 @@ public class World {
 			for(int i=0; i< currentSizeOfCreatureList; i++) {
 				xPosition = creatureList.get(i).getMyLocation.getX();
 				yPosition = creatureList.get(i).getMyLocation.getY();
-				xPosition++;
-				yPosition++;
-				//add rgen here so that the creature doesn't only move laterally
-				creatureList.get(i).setX(xPosition);
-				creatureList.get(i).setY(yPosition);
+				//xPosition++;
+				//yPosition++;
+				//random generator for movement anywhere between certain bounds
+				xPosition + rgen.nextInt(-3,3);
+				yPosition + rgen.nextInt(-3,3);
+				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
+				
 			}
 	}
 	
