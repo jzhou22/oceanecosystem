@@ -12,7 +12,6 @@ public class Kelp extends Plant {
 	public Kelp(Location l, World w) {
 		super(l,w);
 		myLifeSpan = 3;
-		myColor = Color.GREEN;
 	}
 	
 	public void reproduce() {
