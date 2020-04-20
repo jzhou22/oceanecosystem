@@ -26,6 +26,10 @@ public class Shark extends Fish {
 
 	}
 	
+	public Location hunt() {
+			
+	}
+	
 	//eats fish or stingrays if it touches it
 	public void eat() {
 		int eat = rgen.nextInt(1, 2);
