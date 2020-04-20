@@ -38,6 +38,7 @@ public class World {
 				yPosition = creatureList.get(i).getMyLocation.getY();
 				xPosition++;
 				yPosition++;
+				//add rgen here so that the creature doesn't only move laterally
 				creatureList.get(i).setX(xPosition);
 				creatureList.get(i).setY(yPosition);
 			}
