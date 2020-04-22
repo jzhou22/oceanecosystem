@@ -48,18 +48,7 @@ public class Minnow extends Fish{
 			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
 			myWorld.getCreatureList().add(new Minnow(new Location(newX,newY), myWorld, speed));
 		}
-		
-		
-<<<<<<< HEAD
 	}
-
-	
-					
-	
-
-=======
-	}	
->>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
 	
 	public String getType() {
 		return "Minnow";
