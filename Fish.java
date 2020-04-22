@@ -43,6 +43,7 @@ public abstract class Fish extends LifeForm{
 		
 		
 	}
+	public abstract Location hunt();
 	public double trueDistance(int x, int y) {
 		return Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
 	}

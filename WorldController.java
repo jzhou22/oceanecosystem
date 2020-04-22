@@ -1,6 +1,4 @@
 package oceanecosystem;
-<<<<<<< HEAD
-=======
 
 
 import java.awt.Color;
@@ -70,4 +68,3 @@ public class WorldController extends GraphicsProgram {
 		}
 	}
 }
->>>>>>> af25ca823e4f18544cf58e293d81e74218d48313
