@@ -3,6 +3,7 @@ package oceanecosystem;
 
 
 
+
 public class Location {
 	
 	private int x;

@@ -2,7 +2,9 @@ package oceanecosystem;
 
 
 
+
 import java.util.ArrayList;
+
 import acm.util.RandomGenerator;
 
 public class World {
@@ -29,21 +31,21 @@ public class World {
 //		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();		
-		move();
+//		moveGeneral();
 	}
 	// general movement code that can be applied to every creature at once
-	public void move(){
-		int currentSizeOfCreatureList = creatureList().size();
+	public void moveGeneral(){
+		int currentSizeOfCreatureList = getCreatureList().size();
 		int xPosition;
 		int yPosition;
 		
 			for(int i=0; i< currentSizeOfCreatureList; i++) {
-				xPosition = creatureList.get(i).getX();
-				yPosition = creatureList.get(i).getY();
+				xPosition = creatureList.get(i).getMyLocation().getX();
+				yPosition = creatureList.get(i).getMyLocation().getY();
 				
 				//random generator for movement anywhere between certain bounds
-				xPosition + rgen.nextInt(-3,3);
-				yPosition + rgen.nextInt(-3,3);
+				xPosition += rgen.nextInt(-3,3);
+				yPosition += rgen.nextInt(-3,3);
 				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
 				
 			}
@@ -55,6 +57,7 @@ public class World {
 		System.out.println("size of list is "+currentSizeOfCreatureList);
 		for(int i=0; i< currentSizeOfCreatureList; i++) {
 			creatureList.get(i).reproduce();
+			creatureList.get(i).eat();
 		}
 	}
 	

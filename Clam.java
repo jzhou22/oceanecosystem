@@ -1,6 +1,7 @@
 package oceanecosystem;
 
 
+
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
@@ -11,13 +12,13 @@ public class Clam extends LifeForm {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	public Clam(Location l, World w) {
 		super(l, w);
-		myLifeSpan = 10;
+		myLifeSpan = 1000;
 		myColor = Color.CYAN;
 		reach= rgen.nextInt(5,10);
 	}
 	public Clam(Location l, World w, int r) {
 		super(l, w);
-		myLifeSpan = 10;
+		myLifeSpan = 1000;
 		myColor = Color.CYAN;
 		reach= rgen.nextInt(r-2,r+2);
 	}
@@ -42,7 +43,7 @@ public class Clam extends LifeForm {
 
 	public void reproduce() {
 		RandomGenerator loc = RandomGenerator.getInstance();
-		if (myAge == 1 && fed==true) {
+		if (myAge >= 1 && fed==true) {
 			fed=false;
 			int newX = (int)(myLocation.getX()+(loc.nextInt(-5,5)));
 			int newY = (int)(myLocation.getY()+(loc.nextInt(-5,5))); 

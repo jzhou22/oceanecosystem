@@ -3,6 +3,7 @@ package oceanecosystem;
 
 
 
+
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
@@ -46,26 +47,11 @@ public class Minnow extends Fish{
 		
 		
 	}
-<<<<<<< HEAD
-	public void eat() {
-		RandomGenerator rgen = RandomGenerator.getInstance();
-		for (int x = 0; x < 5; x++) {
-			for (int y = 0; y < 5; y++) {
-				int eat = rgen.nextInt(1, 2);
-				if (eat == 1) {
-					for(LifeForm food : myWorld.getCreatureList()) {
-						if(food.getMyLocation().getX()== x && food.getMyLocation().getY()== y) {
-							food.kill();	
-						}
-					}
-					
-				}
-			}
-		}
-	}
+
 	
-=======
->>>>>>> af25ca823e4f18544cf58e293d81e74218d48313
+					
+	
+
 	
 	public String getType() {
 		return "Minnow";
