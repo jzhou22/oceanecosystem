@@ -31,6 +31,7 @@ public class World {
 //		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();		
+<<<<<<< HEAD
 //		moveGeneral();
 	}
 	// general movement code that can be applied to every creature at once
@@ -48,7 +49,18 @@ public class World {
 				yPosition += rgen.nextInt(-3,3);
 				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
 				
+=======
+		moveCreatures();
+	}
+	// general movement code that can be applied to every creature at once
+	public void moveCreatures(){
+		for(LifeForm i : creatureList) {
+			if(i.getType()=="Stingray" || i.getType()=="Shark" || i.getType()=="Minnow" ) {
+				((Fish) i).move(((Fish) i).hunt());
+>>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
 			}
+		}
+			
 	}
 	
 	public void makeNewCreatures() {

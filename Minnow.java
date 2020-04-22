@@ -25,6 +25,10 @@ public class Minnow extends Fish{
 		
 	}
 	
+	public Location hunt() {
+			
+	}
+	
 	//eats kelp if it touches it
 	public void eat() {
 		int eat = rgen.nextInt(1, 2);
@@ -46,12 +50,16 @@ public class Minnow extends Fish{
 		}
 		
 		
+<<<<<<< HEAD
 	}
 
 	
 					
 	
 
+=======
+	}	
+>>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
 	
 	public String getType() {
 		return "Minnow";
