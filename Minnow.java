@@ -42,7 +42,7 @@ public class Minnow extends Fish{
 		}
 	}
 	public void reproduce() {
-		if (myAge == 1 && fed==true) {
+		if (myAge >= 1 && fed==true) {
 			fed=false;
 			int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
 			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
