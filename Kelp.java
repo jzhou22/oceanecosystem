@@ -4,6 +4,7 @@ package oceanecosystem;
 
 
 
+
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -13,17 +14,17 @@ public class Kelp extends Plant {
 	
 	public Kelp(Location l, World w) {
 		super(l,w);
-<<<<<<< HEAD
+
 
 		myLifeSpan = 5;
 		myColor = Color.GREEN;
 		
 
-=======
+
 		myLifeSpan = 5;
 		myColor = Color.GREEN;
 		myLifeSpan = 3;
->>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
+
 	}
 	
 	public void reproduce() {

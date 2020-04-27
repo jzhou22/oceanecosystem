@@ -1,9 +1,6 @@
 package oceanecosystem;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
 
 
 import java.awt.Color;
@@ -30,12 +27,12 @@ public class WorldController extends GraphicsProgram {
 	
 	public void setUpWorld(){
 		theWorld = new World(50,50);
-//		theWorld.getCreatureList().add( new Kelp( new Location(10,6), theWorld ));
+		theWorld.getCreatureList().add( new Kelp( new Location(10,6), theWorld ));
 		theWorld.getCreatureList().add( new Kelp( new Location(2,6), theWorld ));
 		theWorld.getCreatureList().add( new Clam(new Location(2,10), theWorld ));
-//		theWorld.getCreatureList().add( new Minnow(new Location(10,20), theWorld));
-//		theWorld.getCreatureList().add( new Shark( new Location(7,30), theWorld));
-//		theWorld.getCreatureList().add( new Stingray( new Location(210,20), theWorld)); 
+		theWorld.getCreatureList().add( new Minnow(new Location(10,20), theWorld));
+		theWorld.getCreatureList().add( new Shark( new Location(7,30), theWorld));
+		theWorld.getCreatureList().add( new Stingray( new Location(210,20), theWorld)); 
 		theWorldCanvas = this.getGCanvas();
 	}
 	
@@ -73,7 +70,3 @@ public class WorldController extends GraphicsProgram {
 		}
 	}
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b

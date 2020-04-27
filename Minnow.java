@@ -4,6 +4,7 @@ package oceanecosystem;
 
 
 
+
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
@@ -26,7 +27,7 @@ public class Minnow extends Fish{
 	}
 	
 	public Location hunt() {
-			
+			return null;
 	}
 	
 	//eats kelp if it touches it
@@ -42,7 +43,7 @@ public class Minnow extends Fish{
 		}
 	}
 	public void reproduce() {
-		if (myAge == 1 && fed==true) {
+		if (myAge >= 1 && fed==true) {
 			fed=false;
 			int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
 			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
@@ -50,16 +51,11 @@ public class Minnow extends Fish{
 		}
 		
 		
-<<<<<<< HEAD
+
 	}
 
-	
-					
-	
 
-=======
-	}	
->>>>>>> e68cd582a5d96ebe397cb90df40ddabcffe86e6b
+
 	
 	public String getType() {
 		return "Minnow";

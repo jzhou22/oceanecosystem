@@ -1,7 +1,5 @@
 package oceanecosystem;
 
-
-
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
