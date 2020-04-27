@@ -1,10 +1,13 @@
 package oceanecosystem;
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 import java.awt.Color;
 
 public abstract class Fish extends LifeForm{
@@ -18,28 +21,87 @@ public abstract class Fish extends LifeForm{
 		if(loc.getX()>myLocation.getX()) {
 			if(loc.getY()>myLocation.getY()) {
 				//x+ y+
-				if(trueDistance(loc.getX()-getMyLocation().getX(),loc.getY()-getMyLocation().getY())<speed) {
+				if(trueDistance(loc.getX()-myLocation.getX(),loc.getY()-myLocation.getY())<speed) {
 					myLocation=loc;
 				}
-				
+				else {
+					double xMoves=(loc.getX()-myLocation.getX());
+					double yMoves=(loc.getY()-myLocation.getY());
+					double moveK= (xMoves+yMoves)/speed;
+					for(int i=0; i<speed; i++) {
+						if(xMoves>yMoves) {
+							myLocation.setX(myLocation.getX()+1);
+							xMoves-=moveK;
+						}
+						else {
+							myLocation.setY(myLocation.getX()+1);
+							yMoves-=moveK;
+						}
+					}
+				}
 			}
 			else {
 				//x+ y-
-				if(trueDistance(loc.getX()-getMyLocation().getX(),getMyLocation().getY()-loc.getY())<speed) {
+				if(trueDistance(loc.getX()-myLocation.getX(),myLocation.getY()-loc.getY())<speed) {
 					myLocation=loc;
+				}
+				else {
+					double xMoves=(loc.getX()-myLocation.getX());
+					double yMoves=(myLocation.getY()-loc.getY());
+					double moveK= (xMoves+yMoves)/speed;
+					for(int i=0; i<speed; i++) {
+						if(xMoves>yMoves) {
+							myLocation.setX(myLocation.getX()+1);
+							xMoves-=moveK;
+						}
+						else {
+							myLocation.setY(myLocation.getX()-1);
+							yMoves-=moveK;
+						}
+					}
 				}
 			}
 		}
 		else if(loc.getY()>myLocation.getY()) {
 			//x- y+
-			if(trueDistance(getMyLocation().getX()-loc.getX(),loc.getY()-getMyLocation().getY())<speed) {
+			if(trueDistance(myLocation.getX()-loc.getX(),loc.getY()-myLocation.getY())<speed) {
 				myLocation=loc;
+			}
+			else {
+				double xMoves=(myLocation.getX()-loc.getX());
+				double yMoves=(loc.getY()-myLocation.getY());
+				double moveK= (xMoves+yMoves)/speed;
+				for(int i=0; i<speed; i++) {
+					if(xMoves>yMoves) {
+						myLocation.setX(myLocation.getX()-1);
+						xMoves-=moveK;
+					}
+					else {
+						myLocation.setY(myLocation.getX()+1);
+						yMoves-=moveK;
+					}
+				}
 			}
 		}
 		else {
 			//x- y-
 			if(trueDistance(getMyLocation().getX()-loc.getX(),getMyLocation().getY()-loc.getY())<speed) {
 				myLocation=loc;
+			}
+			else {
+				double xMoves=(myLocation.getX()-loc.getX());
+				double yMoves=(myLocation.getY()-loc.getY());
+				double moveK= (xMoves+yMoves)/speed;
+				for(int i=0; i<speed; i++) {
+					if(xMoves>yMoves) {
+						myLocation.setX(myLocation.getX()-1);
+						xMoves-=moveK;
+					}
+					else {
+						myLocation.setY(myLocation.getX()-1);
+						yMoves-=moveK;
+					}
+				}
 			}
 		}
 		

@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import acm.util.RandomGenerator;
 
 public class World {
-	/*
-	 * hello did this go to the repository
-	 */
 	
 	
 	private int width;
@@ -31,10 +28,31 @@ public class World {
 		makeNewCreatures();
 //		eatThings();
 		creaturesGetOlder();
+<<<<<<< HEAD
 		purgeTheDead();	
 		moveCreatures();
 
 
+=======
+		purgeTheDead();		
+	}
+	// general movement code that can be applied to every creature at once
+	public void moveGeneral(){
+		int currentSizeOfCreatureList = getCreatureList().size();
+		int xPosition;
+		int yPosition;
+		
+			for(int i=0; i< currentSizeOfCreatureList; i++) {
+				xPosition = creatureList.get(i).getMyLocation().getX();
+				yPosition = creatureList.get(i).getMyLocation().getY();
+				
+				//random generator for movement anywhere between certain bounds
+				xPosition += rgen.nextInt(-3,3);
+				yPosition += rgen.nextInt(-3,3);
+				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
+				moveCreatures();
+				}
+>>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 	}
 
 	
@@ -43,7 +61,10 @@ public class World {
 		for(LifeForm i : creatureList) {
 			if(i.getType()=="Stingray" || i.getType()=="Shark" || i.getType()=="Minnow" ) {
 				((Fish) i).move(((Fish) i).hunt());
+<<<<<<< HEAD
 
+=======
+>>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 			}
 		}
 			
