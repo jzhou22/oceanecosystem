@@ -11,6 +11,12 @@ public abstract class Fish extends LifeForm{
 	}
 	
 	public void move(Location loc) {
+		if(loc.getX()>50 || loc.getX()<0) {
+			return;
+		}
+		if(loc.getY()>50 || loc.getY()<0) {
+			return;
+		}
 		if(loc.getX()>myLocation.getX()) {
 			if(loc.getY()>myLocation.getY()) {
 				//x+ y+

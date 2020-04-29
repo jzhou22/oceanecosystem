@@ -25,11 +25,16 @@ public class WorldController extends GraphicsProgram {
 	public void setUpWorld(){
 		theWorld = new World(50,50);
 		theWorld.getCreatureList().add( new Kelp( new Location(10,6), theWorld ));
+		theWorld.getCreatureList().add( new Kelp( new Location(4,6), theWorld ));
+		theWorld.getCreatureList().add( new Kelp( new Location(6,7), theWorld ));
 		theWorld.getCreatureList().add( new Kelp( new Location(2,6), theWorld ));
-		theWorld.getCreatureList().add( new Clam(new Location(2,10), theWorld ));
-		theWorld.getCreatureList().add( new Minnow(new Location(10,20), theWorld));
-		theWorld.getCreatureList().add( new Shark( new Location(7,30), theWorld));
-		theWorld.getCreatureList().add( new Stingray( new Location(210,20), theWorld)); 
+		theWorld.getCreatureList().add( new Clam(new Location(25,25), theWorld ));
+		theWorld.getCreatureList().add( new Minnow(new Location(5,10), theWorld));
+		theWorld.getCreatureList().add( new Minnow(new Location(5,11), theWorld));
+		theWorld.getCreatureList().add( new Minnow(new Location(5,12), theWorld));
+		theWorld.getCreatureList().add( new Minnow(new Location(5,13), theWorld));
+		theWorld.getCreatureList().add( new Shark( new Location(50,50), theWorld));
+		theWorld.getCreatureList().add( new Stingray( new Location(30,30), theWorld)); 
 		theWorldCanvas = this.getGCanvas();
 	}
 	

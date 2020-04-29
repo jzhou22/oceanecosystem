@@ -24,34 +24,11 @@ public class World {
 	}
 	
 	public void letTimePass(){
-		
 		makeNewCreatures();
-//		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();	
 		moveCreatures();
-
-
-		purgeTheDead();		
 	}
-	// general movement code that can be applied to every creature at once
-	public void moveGeneral(){
-		int currentSizeOfCreatureList = getCreatureList().size();
-		int xPosition;
-		int yPosition;
-		
-			for(int i=0; i< currentSizeOfCreatureList; i++) {
-				xPosition = creatureList.get(i).getMyLocation().getX();
-				yPosition = creatureList.get(i).getMyLocation().getY();
-				
-				//random generator for movement anywhere between certain bounds
-				xPosition += rgen.nextInt(-3,3);
-				yPosition += rgen.nextInt(-3,3);
-				creatureList.get(i).setMyLocation(new Location (xPosition, yPosition));
-				moveCreatures();
-				}
-	}
-
 	
 	// general movement code that can be applied to every creature at once
 	public void moveCreatures(){
@@ -86,6 +63,9 @@ public class World {
 	public void creaturesGetOlder(){
 		for( LifeForm l:creatureList){
 			l.age(1);
+			if(l.getAge()>l.myLifeSpan) {
+				l.kill();
+			}
 		}
 	}
 	

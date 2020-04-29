@@ -9,14 +9,14 @@ public class Minnow extends Fish{
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	public Minnow(Location l, World w) {
 		super(l,w);
-		myLifeSpan = 100;
+		myLifeSpan = 10;
 		myColor = Color.RED;
 		speed=rgen.nextInt(1,5);
 		
 	}
 	public Minnow(Location l, World w, int s) {
 		super(l,w);
-		myLifeSpan = 100;
+		myLifeSpan = 10;
 		myColor = Color.RED;
 		speed=rgen.nextInt(s-1,s+3);
 		
@@ -45,8 +45,10 @@ public class Minnow extends Fish{
 			}
 			if(evading==false) {
 				if(target.getType()=="Kelp") {
-					if(targetLoc==null && target.getMyLocation().distance(myLocation)<=10) {
-						targetLoc=target.getMyLocation();
+					if(targetLoc==null) {
+						if(target.getMyLocation().distance(myLocation)<=7) {
+							targetLoc=target.getMyLocation();
+						}
 					}
 					else if(target.getMyLocation().distance(myLocation)<targetLoc.distance(myLocation)) {
 						targetLoc=target.getMyLocation();
@@ -75,21 +77,17 @@ public class Minnow extends Fish{
 	public void reproduce() {
 		if (myAge >= 1 && fed==true) {
 			fed=false;
-			int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
-			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
-			if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
-				myWorld.getCreatureList().add(new Minnow(new Location(newX,newY), myWorld, speed));
+			while(true) {
+				int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
+				int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
+				if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
+					myWorld.getCreatureList().add(new Minnow(new Location(newX,newY), myWorld, speed));
+					break;
+				}
 			}
+			
 		}
-		
-		
-
 	}
-
-
-
-
-
 	public String getType() {
 		return "Minnow";
 	}

@@ -15,14 +15,14 @@ public class Stingray extends Fish{
 
 	public Stingray(Location l, World w) {
 		super(l,w);
-		myLifeSpan = 100;
+		myLifeSpan = 30;
 		myColor = Color.GRAY;
 		speed=rgen.nextInt(3,8);
 	}
 	
 	public Stingray(Location l, World w, int s) {
 		super(l,w);
-		myLifeSpan = 100;
+		myLifeSpan = 30;
 		myColor = Color.GRAY;
 		speed=rgen.nextInt(s-3,s+3);
 	}
@@ -50,8 +50,10 @@ public class Stingray extends Fish{
 			}
 			if(evading==false) {
 				if(target.getType()=="Minnow" || target.getType()=="Clam") {
-					if(targetLoc==null && target.getMyLocation().distance(myLocation)<=10) {
-						targetLoc=target.getMyLocation();
+					if(targetLoc==null) {
+						if(target.getMyLocation().distance(myLocation)<=10) {
+							targetLoc=target.getMyLocation();
+						}
 					}
 					else if(target.getMyLocation().distance(myLocation)<targetLoc.distance(myLocation)) {
 						targetLoc=target.getMyLocation();
@@ -83,11 +85,15 @@ public class Stingray extends Fish{
 	public void reproduce() {
 		if (myAge >= 1 && fed==true) {
 			fed=false;
-			int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
-			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
-			if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
-				myWorld.getCreatureList().add(new Stingray(new Location(newX,newY), myWorld, speed));
+			while(true) {
+				int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
+				int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
+				if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
+					myWorld.getCreatureList().add(new Stingray(new Location(newX,newY), myWorld, speed));
+					break;
+				}
 			}
+		
 		}
 		
 		
