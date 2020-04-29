@@ -6,6 +6,7 @@ package oceanecosystem;
 
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 import acm.util.RandomGenerator;
 
@@ -26,8 +27,42 @@ public class Stingray extends Fish{
 		speed=rgen.nextInt(s-3,s+3);
 	}
 	
-	public Location hunt() {
-			return null;
+	public Location hunt(ArrayList<LifeForm> creatureList) {
+		Location targetLoc = null;
+		boolean evading=false;
+		for(LifeForm target : creatureList) {
+			if(target.getType()=="Shark") {
+				if(evading==false) {
+					if(myLocation.distance(target.getMyLocation())<=15) {
+						evading=true;
+						int xDiff=myLocation.getX()-target.getMyLocation().getX();
+						int yDiff=myLocation.getY()-target.getMyLocation().getY();
+						targetLoc=new Location(myLocation.getX()+xDiff, myLocation.getY()+yDiff);
+					}
+				}
+				else{
+					if(myLocation.distance(target.getMyLocation())<myLocation.distance(targetLoc)) {
+						int xDiff=myLocation.getX()-target.getMyLocation().getX();
+						int yDiff=myLocation.getY()-target.getMyLocation().getY();
+						targetLoc=new Location(myLocation.getX()+xDiff, myLocation.getY()+yDiff);
+					}
+				}
+			}
+			if(evading==false) {
+				if(target.getType()=="Minnow" || target.getType()=="Clam") {
+					if(targetLoc==null && target.getMyLocation().distance(myLocation)<=10) {
+						targetLoc=target.getMyLocation();
+					}
+					else if(target.getMyLocation().distance(myLocation)<targetLoc.distance(myLocation)) {
+						targetLoc=target.getMyLocation();
+					}
+				}
+			}
+		}
+		if(targetLoc==null) {
+			targetLoc=new Location(myLocation.getX()+(rgen.nextInt(-10, 10)), myLocation.getY()+(rgen.nextInt(-10, 10)));
+		}
+		return targetLoc;
 	}
 	
 	//eats fish or clams if it touches it

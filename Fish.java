@@ -1,14 +1,7 @@
 package oceanecosystem;
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 import java.awt.Color;
+import java.util.ArrayList;
 
 public abstract class Fish extends LifeForm{
 	protected int speed;
@@ -107,7 +100,7 @@ public abstract class Fish extends LifeForm{
 		
 		
 	}
-	public abstract Location hunt();
+	public abstract Location hunt(ArrayList<LifeForm> creatureList);
 	public double trueDistance(int x, int y) {
 		return Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
 	}

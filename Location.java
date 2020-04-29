@@ -29,6 +29,11 @@ public class Location {
 		this.y = y;
 	}
 	
+	public int distance(Location l) {
+		int xDistance=Math.abs(x-l.getX());
+		int yDistance=Math.abs(y-l.getY());
+		return (int) Math.sqrt(Math.pow(xDistance, 2)+Math.pow(yDistance, 2));
+	}
 	@Override
 	public String toString() {
 		return "Location [x=" + x + ", y=" + y + "]";

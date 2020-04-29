@@ -7,6 +7,7 @@ import acm.util.RandomGenerator;
 import acm.program.*;
 import acm.util.*;
 import java.awt.Color;
+import java.util.ArrayList;
 
 import acm.graphics.*;
 
@@ -28,8 +29,22 @@ public class Shark extends Fish {
 
 	}
 	
-	public Location hunt() {
-			return null;
+	public Location hunt(ArrayList<LifeForm> creatureList) {
+		Location targetLoc = null;
+			for(LifeForm target : creatureList) {
+				if(target.getType()=="Minnow" || target.getType()=="Stingray") {
+					if(targetLoc==null && target.getMyLocation().distance(myLocation)<=15) {
+						targetLoc=target.getMyLocation();
+					}
+					else if(target.getMyLocation().distance(myLocation)<targetLoc.distance(myLocation)) {
+						targetLoc=target.getMyLocation();
+					}
+				}
+			}
+			if(targetLoc==null) {
+				targetLoc=new Location(myLocation.getX()+(rgen.nextInt(-10, 10)), myLocation.getY()+(rgen.nextInt(-10, 10)));
+			}
+			return targetLoc;
 	}
 	
 	//eats fish or stingrays if it touches it
