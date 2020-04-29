@@ -45,7 +45,9 @@ public class Clam extends LifeForm {
 			fed=false;
 			int newX = (int)(myLocation.getX()+(loc.nextInt(-5,5)));
 			int newY = (int)(myLocation.getY()+(loc.nextInt(-5,5))); 
-			myWorld.getCreatureList().add(new Clam(new Location(newX,newY), myWorld, reach));
+			if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
+				myWorld.getCreatureList().add(new Clam(new Location(newX,newY), myWorld, reach));
+			}
 		}
 
 	}
