@@ -25,7 +25,9 @@ public class Kelp extends Plant {
 		if(reproduce==1) {
 			int newX = (int)(myLocation.getX()+(rgen.nextInt(-5,5)));
 			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
-			myWorld.getCreatureList().add(new Kelp(new Location(newX,newY), myWorld));
+			if (newX >= 0 && newX <= 50 && newY >= 0 && newY <= 50){
+				myWorld.getCreatureList().add(new Kelp(new Location(newX,newY), myWorld));
+			}
 		}
 	}
 	
