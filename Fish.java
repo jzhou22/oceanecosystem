@@ -1,13 +1,7 @@
 package oceanecosystem;
 
-<<<<<<< HEAD
 
 
-
-
-
-=======
->>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 import java.awt.Color;
 
 public abstract class Fish extends LifeForm{
@@ -18,7 +12,7 @@ public abstract class Fish extends LifeForm{
 	}
 	
 	public void move(Location loc) {
-		if(loc.getX()>myLocation.getX()) {
+if(loc.getX()>myLocation.getX()) {
 			if(loc.getY()>myLocation.getY()) {
 				//x+ y+
 				if(trueDistance(loc.getX()-myLocation.getX(),loc.getY()-myLocation.getY())<speed) {

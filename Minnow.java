@@ -1,10 +1,6 @@
 package oceanecosystem;
 
 
-
-
-
-
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
@@ -49,17 +45,13 @@ public class Minnow extends Fish{
 			int newY = (int)(myLocation.getY()+(rgen.nextInt(-5,5))); 
 			myWorld.getCreatureList().add(new Minnow(new Location(newX,newY), myWorld, speed));
 		}
-<<<<<<< HEAD
 		
 		
 
 	}
 
+	
 
-
-=======
-	}
->>>>>>> c2fe63405baab3fbf87e33ef0df38ec2f5a3c417
 	
 	public String getType() {
 		return "Minnow";
