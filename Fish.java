@@ -1,8 +1,12 @@
 package oceanecosystem;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ac723fb3787718100a09ffc532e164cfd0684af2
 import java.awt.Color;
+import java.util.ArrayList;
 
 public abstract class Fish extends LifeForm{
 	protected int speed;
@@ -12,7 +16,17 @@ public abstract class Fish extends LifeForm{
 	}
 	
 	public void move(Location loc) {
+<<<<<<< HEAD
 if(loc.getX()>myLocation.getX()) {
+=======
+		if(loc.getX()>50 || loc.getX()<0) {
+			return;
+		}
+		if(loc.getY()>50 || loc.getY()<0) {
+			return;
+		}
+		if(loc.getX()>myLocation.getX()) {
+>>>>>>> ac723fb3787718100a09ffc532e164cfd0684af2
 			if(loc.getY()>myLocation.getY()) {
 				//x+ y+
 				if(trueDistance(loc.getX()-myLocation.getX(),loc.getY()-myLocation.getY())<speed) {
@@ -101,7 +115,7 @@ if(loc.getX()>myLocation.getX()) {
 		
 		
 	}
-	public abstract Location hunt();
+	public abstract Location hunt(ArrayList<LifeForm> creatureList);
 	public double trueDistance(int x, int y) {
 		return Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
 	}

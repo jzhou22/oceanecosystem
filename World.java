@@ -25,12 +25,11 @@ public class World {
 	}
 	
 	public void letTimePass(){
-		
 		makeNewCreatures();
-//		eatThings();
 		creaturesGetOlder();
 		purgeTheDead();	
 		moveCreatures();
+<<<<<<< HEAD
 		purgeTheDead();		
 	}
 	// general movement code that can be applied to every creature at once
@@ -52,12 +51,19 @@ public class World {
 
 	}
 
+=======
+	}
+>>>>>>> ac723fb3787718100a09ffc532e164cfd0684af2
 	
 	// general movement code that can be applied to every creature at once
 	public void moveCreatures(){
 		for(LifeForm i : creatureList) {
 			if(i.getType()=="Stingray" || i.getType()=="Shark" || i.getType()=="Minnow" ) {
+<<<<<<< HEAD
 				((Fish) i).move(((Fish) i).hunt());
+=======
+				((Fish) i).move(((Fish) i).hunt(creatureList));
+>>>>>>> ac723fb3787718100a09ffc532e164cfd0684af2
 			}
 		}
 			
@@ -86,6 +92,9 @@ public class World {
 	public void creaturesGetOlder(){
 		for( LifeForm l:creatureList){
 			l.age(1);
+			if(l.getAge()>l.myLifeSpan) {
+				l.kill();
+			}
 		}
 	}
 	
